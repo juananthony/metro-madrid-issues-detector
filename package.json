@@ -1,0 +1,26 @@
+{
+  "name": "metro-madrid-issues-detector",
+  "version": "1.0.0",
+  "description": "Issues detector for Metro Madrid",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test $,specified\" && exit 1",
+    "build": "babel-node index.js",
+    "start": "babel-node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juananthony/metro-madrid-issues-detector.git"
+  },
+  "keywords": [
+    "metro",
+    "public",
+    "transport"
+  ],
+  "author": "juananton.io",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juananthony/metro-madrid-issues-detector/issues"
+  },
+  "homepage": "https://github.com/juananthony/metro-madrid-issues-detector#readme"
+}
