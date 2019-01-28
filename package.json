@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/juananthony/metro-madrid-issues-detector/issues"
   },
-  "homepage": "https://github.com/juananthony/metro-madrid-issues-detector#readme"
+  "homepage": "https://github.com/juananthony/metro-madrid-issues-detector#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
