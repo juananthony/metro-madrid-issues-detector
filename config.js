@@ -3,6 +3,6 @@ module.exports = {
         port: process.env.PORT || process.env.SERVER_PORT
     },
     db: {
-        uri: 'mongodb+srv://' + process.env.MONGO_USER + ':' + process.env.MONGO_PASS + '@' + process.env.MONGO_SERVER + '/'
+        uri: 'mongodb+srv://' + process.env.MONGO_USER_TWEETS + ':' + process.env.MONGO_PASS_TWEETS + '@' + process.env.MONGO_SERVER_TWEETS + '/'
     }
 }
