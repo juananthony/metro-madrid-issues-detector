@@ -24,6 +24,11 @@
   },
   "homepage": "https://github.com/juananthony/metro-madrid-issues-detector#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.13",
+    "node-uuid": "^1.4.8"
   }
 }
