@@ -21,6 +21,9 @@ tweetsRouter.route('/issues')
                 'user': 1,
                 'id': 1,
                 'id_str': 1
+            },
+            {
+                sort: {'timestamp_ms': -1}
             });
         query.exec((err, tweets) => {
             console.log("received ... " + tweets.length)
