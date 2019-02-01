@@ -11,7 +11,8 @@ tweetsRouter.route('/issues')
         console.log("GET /tweets/issues")
         var query = tweetModel.find(
             {
-                'classification.naive_bayes.result': 'issue'
+                'classification.naive_bayes.result': 'issue',
+                'user.id': {'$ne': 182764833}
             },
             {
                 'created_at': 1,
@@ -40,7 +41,8 @@ tweetsRouter.route('/complaints')
         console.log("GET /tweets/complaints")
         var query = tweetModel.find(
             {
-                'classification.naive_bayes.result': 'complaint'
+                'classification.naive_bayes.result': 'complaint',
+                'user.id': {'$ne': 182764833}
             },
             {
                 'created_at': 1,
@@ -66,7 +68,8 @@ tweetsRouter.route('/nothings')
         console.log("GET /tweets/nothings")
         var query = tweetModel.find(
             {
-                'classification.naive_bayes.result': 'nothing'
+                'classification.naive_bayes.result': 'nothing',
+                'user.id': {'$ne': 182764833}
             },
             {
                 'created_at': 1,
