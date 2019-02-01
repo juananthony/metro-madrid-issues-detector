@@ -4,6 +4,8 @@ function getTweetText(tweet) {
 }
 
 d3.json("/tweets/issues").then(data => {
+
+    d3.select("#spinner").remove();
     
     var container = d3.select("body").append("div");
 
@@ -27,7 +29,8 @@ d3.json("/tweets/issues").then(data => {
         .data(d => _.sortBy(d[1], 'timestamp_ms'))
         .enter()
         .append("li")
-        .text(d => getTweetText(d))
+        .append("a")
+        .text(d => getTweetText(d));
         
 
 });
