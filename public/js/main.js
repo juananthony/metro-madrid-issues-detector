@@ -5,7 +5,12 @@ function getTweetText(tweet) {
     else return tweet.extended_tweet.full_text;
 }
 
-d3.json("/tweets/issues").then(data => {
+function getClassByClass(tweet) {
+    if(tweet.classification.naive_bayes.result === 'issue') return 'metro-issue';
+    else if(tweet.classification.naive_bayes.result === 'complaint') return 'metro-complaint';
+}
+
+d3.json("/tweets/userTweets").then(data => {
 
     d3.select("#spinner").remove();
     
@@ -19,18 +24,22 @@ d3.json("/tweets/issues").then(data => {
         return [key, datesGroup[key]];
     });
     
-    var uls = container
+    var divs = container
         .selectAll("div")
         .data(datesGroup)
         .enter()
         .append("div")
+    
+    divs.append("h1")
         .text(d => {return d[0]})
-        .append("ul");
+        
+    var uls = divs.append("ul");
     
     uls.selectAll("ul")
         .data(d => _.sortBy(d[1], 'timestamp_ms'))
         .enter()
         .append("li")
+        .attr("class", d => getClassByClass(d))
         .append("a")
         .text(d => getTweetText(d));
         
