@@ -1,3 +1,5 @@
+moment.locale('es');
+
 function getTweetText(tweet) {
     if(tweet.extended_tweet === undefined) return tweet.text;
     else return tweet.extended_tweet.full_text;
@@ -10,7 +12,7 @@ d3.json("/tweets/issues").then(data => {
     var container = d3.select("body").append("div");
 
     var datesGroup = _.groupBy(data, function(tweet) {
-        return moment(new Date(tweet.timestamp_ms)).startOf('day').format('L');
+        return moment(new Date(tweet.timestamp_ms)).startOf('day').format('LL');
     });
 
     datesGroup = Object.keys(datesGroup).map(function(key) {
