@@ -37,6 +37,7 @@ body {
 .official-tweets {
     width: 45%;
     flex-wrap: wrap;
+    border-left: 3px solid #1878A9;
 }
 
 .element-hour {
@@ -74,5 +75,5 @@ body {
     font-weight: 400;
     width: 10%;
     text-align: center;
-    border-right: 3px solid #1878A9;
+    align-self: center;
 }
