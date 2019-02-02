@@ -3,10 +3,54 @@
     margin-top: 150px;
 }
 
-.metro-issue {
-    background-color: #DC3545
+.element-container {
 }
 
-.metro-complaint {
+.element-date {
+    display: flex;
+    text-align: center;
+    flex-flow: column;
+}
+
+.element-date-tweets {
+    display: flex;
+    flex-flow: column;
+}
+
+.user-tweets {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.official-tweets {
+}
+
+.element-hour {
+    display: flex;
+    flex-flow: row;
+}
+
+.element {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+}
+
+.element-metro-issue {
+    background-color: #DC3545;
+}
+
+.element-metro-complaint {
     background-color: #E2DD4D
+}
+
+.element-date-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+}
+
+.element-hour-title {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
 }

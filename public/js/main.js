@@ -10,38 +10,65 @@ function getClassByClass(tweet) {
     else if(tweet.classification.naive_bayes.result === 'complaint') return 'metro-complaint';
 }
 
+function showTweet(tweet) {
+    console.log(tweet);
+}
+
 d3.json("/tweets/userTweets").then(data => {
 
     d3.select("#spinner").remove();
     
-    var container = d3.select("body").append("div");
+    var container = d3
+        .select("body")
+        .append("div")
+        .attr("class", "element-container");
 
-    var datesGroup = _.groupBy(data, function(tweet) {
-        return moment(new Date(tweet.timestamp_ms)).startOf('day').format('LL');
-    });
+    var nestedData = d3.nest()
+        .key(d => moment(new Date(d.timestamp_ms)).format('LL'))
+        .key(d => moment(new Date(d.timestamp_ms)).format('HH'))
+        .entries(data);
 
-    datesGroup = Object.keys(datesGroup).map(function(key) {
-        return [key, datesGroup[key]];
-    });
-    
-    var divs = container
-        .selectAll("div")
-        .data(datesGroup)
+    var datesDiv = container
+        .selectAll("div.element-date")
+        .data(nestedData)
         .enter()
         .append("div")
+        .attr("id", d => d.key)
+        .attr("class", "element-date");
     
-    divs.append("h1")
-        .text(d => {return d[0]})
-        
-    var uls = divs.append("ul");
+    datesDiv
+        .append("h2")
+        .text(d => d.key)
+        .attr("class", "element-date-title");
     
-    uls.selectAll("ul")
-        .data(d => _.sortBy(d[1], 'timestamp_ms'))
+
+    var tweetsDiv = datesDiv
+        .append("div")
+        .attr("class","element-date-tweets");
+    
+    var hoursDiv = tweetsDiv.selectAll("div.element-hour")
+        .data(d => d.values)
         .enter()
-        .append("li")
-        .attr("class", d => getClassByClass(d))
-        .append("a")
-        .text(d => getTweetText(d));
-        
+        .append("div")
+        .attr("class","element-hour");
+
+    var userTweetsDiv = hoursDiv.append("div").attr("class", "user-tweets");
+    
+    hoursDiv
+        .append("h3")
+        .text(d => d.key)
+        .attr("class", "element-hour-title");
+
+    var officialTweetsDiv = hoursDiv.append("div").attr("class", "official-tweets");
+    
+    var elementsDiv = userTweetsDiv.selectAll("div.element")
+        .data(d => d.values)
+        .enter()
+        .append("div")
+        .attr("class", d => "element " + "element-" + getClassByClass(d));
+    
+    elementsDiv.on("mouseover", d => {
+        showTweet(d);
+    });
 
 });

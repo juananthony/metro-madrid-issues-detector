@@ -8,7 +8,7 @@ const parseUrlEncoded = bodyParser.urlencoded({extended:true});
 
 tweetsRouter.route('/userTweets')
     .get((request, response) => {
-        console.log("GET /tweets/issues")
+        console.log("GET /tweets/userTweets")
         var query = tweetModel.find(
             {
                 '$or': [{'classification.naive_bayes.result': 'issue'}, {'classification.naive_bayes.result': 'complaint'}],
@@ -105,6 +105,35 @@ tweetsRouter.route('/nothings')
                 'classification.naive_bayes.result': 'nothing',
                 'user.id': {'$ne': 182764833},
                 'text': {$regex: '^[^RT ](.*)$'}
+            },
+            {
+                'created_at': 1,
+                'text': 1,
+                'extended_tweet':1,
+                'timestamp_ms':1,
+                'user': 1,
+                'id': 1,
+                'id_str': 1
+            });
+        query.exec((err, tweets) => {
+            console.log("received ... " + tweets.length)
+            if(tweets !== undefined) {
+                response.json(tweets);
+            } else {
+                response.json('{error: "no tweets"}');
+            }
+        })
+    });
+
+tweetsRouter.route('/official')
+    .get((request, response) => {
+        console.log("GET /tweets/official")
+        var query = tweetModel.find(
+            {
+                '$or': [{'classification.naive_bayes.result': 'issue'}, {'classification.naive_bayes.result': 'complaint'}],
+                'user.id': 182764833,
+                'text': {$regex: '^[^RT ](.*)$'},
+                'in_reply_to_status_id': null
             },
             {
                 'created_at': 1,
