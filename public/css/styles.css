@@ -1,15 +1,23 @@
+body {
+    background-color: #F3F3F3;
+}
+
 #spinner {
     text-align: -webkit-center;
     margin-top: 150px;
 }
 
 .element-container {
+    margin: 0 15%;
+    padding: 0 5%;
+    background-color: white;
 }
 
 .element-date {
     display: flex;
     text-align: center;
     flex-flow: column;
+    padding: 0 10%;
 }
 
 .element-date-tweets {
@@ -19,10 +27,17 @@
 
 .user-tweets {
     display: flex;
+    width: 45%;
     flex-direction: row-reverse;
+    flex-wrap: wrap;
+    border-right: 1px solid lightgrey;
+    margin: 5px 0;
+    padding-right: 6px;
 }
 
 .official-tweets {
+    width: 45%;
+    flex-wrap: wrap;
 }
 
 .element-hour {
@@ -53,4 +68,5 @@
     margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
+    width: 10%;
 }
