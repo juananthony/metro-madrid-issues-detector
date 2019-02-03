@@ -1,4 +1,5 @@
-var METRO_MADRID_ACCOUNT_ID = 182764833;
+var METRO_MADRID_ACCOUNT_ID = 182764833,
+    TWITTER_URL = "https://twitter.com/";
 
 moment.locale('es');
 
@@ -18,9 +19,63 @@ function getClassByClass(tweet) {
 }
 
 function showTweet(tweet) {
-    var coords = d3.mouse(this);
-    console.log(coords);
+    d3.event.preventDefault();
+    var tweetBox = document.createElement("DIV");
+    tweetBox.setAttribute("class", "user-tweet-example");
+
+    var closeButton = document.createElement("DIV");
+    closeButton.appendChild(document.createTextNode("X"));
+    closeButton.setAttribute("class", "user-tweet-example-close");
+    closeButton.addEventListener("click", event => onCloseExampleTweet(closeButton, event));
+    tweetBox.appendChild(closeButton);
+
+    var imgDiv = document.createElement("DIV");
+    imgDiv.setAttribute("class", "user-tweet-example-img");
+
+    var img = document.createElement("IMG");
+    img.setAttribute("src", tweet.user.profile_image_url_https);
+    imgDiv.appendChild(img);
+
+    var contentDiv = document.createElement("DIV");
+    contentDiv.setAttribute("class", "user-tweet-example-content");
+    var infoDiv = document.createElement("DIV");
+    infoDiv.setAttribute("class", "user-tweet-example-info");
+    var textDiv = document.createElement("DIV");
+    textDiv.setAttribute("class", "user-tweet-example-info-text");
+    var text = document.createTextNode(getTweetText(tweet));
+    textDiv.appendChild(text);
+
+    var aEl = document.createElement("A");
+    aEl.setAttribute("href", TWITTER_URL + tweet.user.screen_name + "/status/" + tweet.id_str);
+    aEl.setAttribute("target", "_blank");
+    aEl.setAttribute("rel", "noopener noreferrer");
+    aEl.appendChild(document.createTextNode("Abrir en Twitter"));
+    textDiv.appendChild(aEl);
+
+    var screenname = document.createElement("DIV");
+    screenname.setAttribute("class", "user-tweet-example-screenname");
+    screenname.appendChild(document.createTextNode(tweet.user.screen_name));
+    infoDiv.appendChild(screenname);
+
+    var tweetDate = document.createElement("DIV");
+    tweetDate.setAttribute("class", "user-tweet-example-date");
+    tweetDate.appendChild(document.createTextNode(moment(new Date(tweet.timestamp_ms)).format('LT')));
+    infoDiv.appendChild(tweetDate);
+
+    contentDiv.appendChild(infoDiv);
+    contentDiv.appendChild(textDiv);
+
+    tweetBox.appendChild(imgDiv);
+    tweetBox.appendChild(contentDiv);
+
+    document.getElementById(tweet.id_str).parentNode.appendChild(tweetBox);
+
     console.log(tweet);
+}
+
+function onCloseExampleTweet(el, event) {
+    event.preventDefault()
+    el.parentNode.parentNode.removeChild(el.parentNode);
 }
 
 d3.json("/tweets").then(data => {
@@ -74,10 +129,11 @@ d3.json("/tweets").then(data => {
         .enter()
         .filter(d => d.user.id != METRO_MADRID_ACCOUNT_ID)
         .append("div")
+        .attr("id", d => d.id_str)
         .attr("class", d => "element " + "element-" + getClassByClass(d));
 
     elementsDiv.on("click", d => {
-        showTweet(d);
+        showTweet(d, elementsDiv);
     });
 
     // Add official tweets
@@ -118,7 +174,6 @@ d3.json("/tweets").then(data => {
         .append("div")
         .attr("class", "official-tweet-info-time")
         .text(d => moment(new Date(d.timestamp_ms)).format('LT'));
-    
     
 
 });
