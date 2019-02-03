@@ -28,7 +28,10 @@ tweetsRouter.route('/')
                 'text': 1,
                 'extended_tweet':1,
                 'timestamp_ms':1,
-                'user': 1,
+                'user.id': 1,
+                'user.name': 1,
+                'user.screen_name': 1,
+                'user.profile_image_url_https': 1,
                 'id': 1,
                 'id_str': 1,
                 'classification': 1
