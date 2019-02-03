@@ -167,6 +167,8 @@ header > h1 {
     border-right: 3px dashed;
     border-right-color: rgba(24, 120, 169,0.7);
     width: 56%;
+    font-size: 18px;
+    text-align: right;
 }
 
 .element-date-title {
@@ -190,7 +192,7 @@ header > h1 {
 
 @media screen and (max-width: 992px) {
     .element-date-title {
-        font-size: 2.5em;
+        font-size: 2em;
     }
     .element-hour-title {
         font-size: 2em;
@@ -199,7 +201,7 @@ header > h1 {
 
 @media screen and (max-width: 600px) {
     .element-date-title {
-        font-size: 2.5em;
+        font-size: 2em;
     }
     .element-hour-title {
         font-size: 2em;

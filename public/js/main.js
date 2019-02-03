@@ -31,7 +31,7 @@ d3.json("/tweets/userTweets").then(data => {
         .attr("class", "element-container box");
 
     var nestedData = d3.nest()
-        .key(d => moment(new Date(d.timestamp_ms)).format('LL'))
+        .key(d => moment(new Date(d.timestamp_ms)).format('dddd[,] LL'))
         .key(d => moment(new Date(d.timestamp_ms)).format('HH'))
         .entries(data);
 
