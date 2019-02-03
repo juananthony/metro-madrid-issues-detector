@@ -1,10 +1,23 @@
 body {
     background-color: #F3F3F3;
+    margin: 0;
+}
+
+header {
+    margin: 0;
+    background-color: #383838;
+    color: white;
+    padding: 40px 15% 30px 15%;
+}
+
+header > h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
 }
 
 #spinner {
     text-align: -webkit-center;
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 .element-container {
@@ -23,7 +36,7 @@ body {
 
 @media screen and (max-width: 600px) {
     .element-container {
-        margin: 0 1%;
+        margin: 0 2%;
         padding: 0 1%;
         background-color: white;
     }
@@ -34,6 +47,23 @@ body {
     flex-flow: column;
     padding: 0 10%;
 }
+
+@media screen and (max-width: 992px) {
+    .element-date {
+        display: flex;
+        flex-flow: column;
+        padding: 0 7%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .element-date {
+        display: flex;
+        flex-flow: column;
+        padding: 0 5%;
+    }
+}
+
 
 .element-date-tweets {
     display: flex;
@@ -53,8 +83,8 @@ body {
 .official-tweets {
     width: 45%;
     flex-wrap: wrap;
-    border-left: 12px solid;
-    border-left-color: rgba(24, 120, 169,0.5);
+    border-left: 1em solid;
+    border-left-color: rgba(24, 120, 169,0.7);
 }
 
 .element-hour {
@@ -64,9 +94,9 @@ body {
 }
 
 .element {
-    width: 15px;
-    height: 15px;
-    margin: 2px;
+    width: 1em;
+    height: 1em;
+    margin: 0.2em;
     cursor:pointer;
 }
 
@@ -84,15 +114,16 @@ body {
     margin: 0;
     padding: 18px 1px 10px 0;
     border-right: 3px dashed;
-    border-right-color: rgba(24, 120, 169,0.5);
+    border-right-color: rgba(24, 120, 169,0.7);
     width: 56%;
-    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
 }
 
 .element-hour-title {
     margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
+    font-size: 14px;
     width: 15%;
     text-align: right;
     align-self: center;
