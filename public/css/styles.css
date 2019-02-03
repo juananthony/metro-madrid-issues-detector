@@ -135,6 +135,22 @@ header > h1 {
     cursor:pointer;
 }
 
+@media screen and (max-width: 992px) {
+    .element {
+        width: 3em;
+        height: 3em;
+        margin: 0.2em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .element {
+        width: 3em;
+        height: 3em;
+        margin: 0.2em;
+    }
+}
+
 .element-metro-issue {
     background-color: #DC3545;
 }
@@ -170,4 +186,22 @@ header > h1 {
     text-align: right;
     align-self: center;
     padding-right: 2%;
+}
+
+@media screen and (max-width: 992px) {
+    .element-date-title {
+        font-size: 2.5em;
+    }
+    .element-hour-title {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .element-date-title {
+        font-size: 2.5em;
+    }
+    .element-hour-title {
+        font-size: 2em;
+    }
 }
