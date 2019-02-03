@@ -310,8 +310,10 @@ header > h1 {
 
 .official-tweet-info-screenname {
     font-size: 12px;
+    color: #888;
 }
 
 .official-tweet-info-time {
     font-size: 12px;
+    color: #888;
 }
