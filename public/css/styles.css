@@ -332,6 +332,7 @@ header > h1 {
 
 .user-tweet-example-close {
     cursor: pointer;
+    margin-left: 0.7em;
 }
 
 .user-tweet-example-content {
@@ -340,7 +341,6 @@ header > h1 {
 }
 
 .user-tweet-example-img {
-    margin-left: 0.5em;
 }
 
 .user-tweet-example-info {
@@ -372,7 +372,7 @@ header > h1 {
         left: 7%;
     }
     .user-tweet-example-close {
-        font-size: 2em;
+        font-size: 2.5em;
     }
     .user-tweet-example-content {
         font-size: 2em;
@@ -384,7 +384,7 @@ header > h1 {
         left: 7%;
     }
     .user-tweet-example-close {
-        font-size: 2em;
+        font-size: 2.5em;
     }
     .user-tweet-example-content {
         font-size: 2em;

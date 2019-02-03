@@ -27,7 +27,6 @@ function showTweet(tweet) {
     closeButton.appendChild(document.createTextNode("X"));
     closeButton.setAttribute("class", "user-tweet-example-close");
     closeButton.addEventListener("click", event => onCloseExampleTweet(closeButton, event));
-    tweetBox.appendChild(closeButton);
 
     var imgDiv = document.createElement("DIV");
     imgDiv.setAttribute("class", "user-tweet-example-img");
@@ -67,6 +66,7 @@ function showTweet(tweet) {
 
     tweetBox.appendChild(imgDiv);
     tweetBox.appendChild(contentDiv);
+    tweetBox.appendChild(closeButton);
 
     document.getElementById(tweet.id_str).parentNode.appendChild(tweetBox);
 
