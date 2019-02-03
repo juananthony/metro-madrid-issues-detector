@@ -260,6 +260,7 @@ header > h1 {
     width: 2em;
     height: 2em;
 }
+
 @media screen and (max-width: 992px) {
     .official-tweet {
         flex-flow: column;
@@ -363,4 +364,29 @@ header > h1 {
 
 .user-tweet-example-info-text > a {
     margin-top: 0.4em;
+}
+
+@media screen and (max-width: 992px) {
+    .user-tweet-example {
+        width: 40em;
+        left: 7%;
+    }
+    .user-tweet-example-close {
+        font-size: 2em;
+    }
+    .user-tweet-example-content {
+        font-size: 2em;
+    }
+}
+@media screen and (max-width: 600px) {
+    .user-tweet-example {
+        width: 40em;
+        left: 7%;
+    }
+    .user-tweet-example-close {
+        font-size: 2em;
+    }
+    .user-tweet-example-content {
+        font-size: 2em;
+    }
 }
