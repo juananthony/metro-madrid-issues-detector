@@ -148,7 +148,7 @@ header > h1 {
     flex-wrap: wrap;
     border-right: 1px solid lightgrey;
     margin: 5px 0;
-    padding-right: 16px;
+    padding-right: 0.5%;
     align-items: center;
 }
 
@@ -203,7 +203,7 @@ header > h1 {
     padding: 18px 3px 10px 0;
     border-right: 3px dashed;
     border-right-color: var(--main-third-color);
-    width: 56%;
+    width: 49.5%;
     font-size: 18px;
     text-align: right;
 }
@@ -221,7 +221,7 @@ header > h1 {
     font-family: var(--font-sans-serif);
     font-weight: 400;
     font-size: 14px;
-    width: 15%;
+    width: 7%;
     text-align: right;
     align-self: center;
     padding-right: 2%;
