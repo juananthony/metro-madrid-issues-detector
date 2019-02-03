@@ -2,6 +2,7 @@
     --main-issue-color: #DC3545;
     --main-complaint-color: #E2DD4D;
     --main-third-color: rgba(24, 120, 169,0.7);
+    --color-light-grey: #888;
     --font-sans-serif: Arial,"Helvetica Neue",Helvetica,sans-serif
 }
 
@@ -310,10 +311,56 @@ header > h1 {
 
 .official-tweet-info-screenname {
     font-size: 12px;
-    color: #888;
+    color: var(--color-light-grey);
 }
 
 .official-tweet-info-time {
     font-size: 12px;
-    color: #888;
+    color: var(--color-light-grey);
+}
+
+.user-tweet-example {
+    width: 20em;
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    font-family: var(--font-sans-serif);
+    padding: 1em;
+}
+
+.user-tweet-example-close {
+    cursor: pointer;
+}
+
+.user-tweet-example-content {
+    margin-left: 0.5em;
+    font-size: 14px;
+}
+
+.user-tweet-example-img {
+    margin-left: 0.5em;
+}
+
+.user-tweet-example-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4em;
+}
+
+.user-tweet-example-screenname {
+    font-weight: bold;
+}
+
+.user-tweet-example-date {
+    color: var(--color-light-grey);
+}
+
+.user-tweet-example-info-text{
+    display: flex;
+    flex-flow: column;
+}
+
+.user-tweet-example-info-text > a {
+    margin-top: 0.4em;
 }
