@@ -1,3 +1,5 @@
+var METRO_MADRID_ACCOUNT_ID = 182764833;
+
 moment.locale('es');
 
 function onDataReceived() {
@@ -21,7 +23,7 @@ function showTweet(tweet) {
     console.log(tweet);
 }
 
-d3.json("/tweets/userTweets").then(data => {
+d3.json("/tweets").then(data => {
 
     onDataReceived();
     
@@ -59,23 +61,64 @@ d3.json("/tweets/userTweets").then(data => {
         .append("div")
         .attr("class","element-hour");
 
+    // Adds user tweets
     var userTweetsDiv = hoursDiv.append("div").attr("class", "user-tweets");
     
     hoursDiv
         .append("h3")
         .text(d => d.key)
         .attr("class", "element-hour-title");
-
-    var officialTweetsDiv = hoursDiv.append("div").attr("class", "official-tweets");
     
     var elementsDiv = userTweetsDiv.selectAll("div.element")
         .data(d => d.values)
         .enter()
+        .filter(d => d.user.id != METRO_MADRID_ACCOUNT_ID)
         .append("div")
         .attr("class", d => "element " + "element-" + getClassByClass(d));
-    
+
     elementsDiv.on("click", d => {
         showTweet(d);
     });
+
+    // Add official tweets
+    var officialsDiv = hoursDiv.append("div").attr("class", "official-tweets");
+
+    var officialTweetsDiv = officialsDiv
+        .selectAll("div.official-tweet")
+        .data(d => d.values)
+        .enter()
+        .filter(d => d.user.id === METRO_MADRID_ACCOUNT_ID)
+        .append("div")
+        .attr("class", "official-tweet");
+    
+    officialTweetsDiv
+        .append("img")
+        .attr("class", "official-tweet-img")
+        .attr("src", d => d.user.profile_image_url_https);
+
+    var officialContainer = officialTweetsDiv
+        .append("div")
+        .attr("class", "official-tweet-container");
+    
+    var accountInfoDiv = officialContainer
+        .append("div")
+        .attr("class", "official-tweet-info");
+
+    officialContainer.append("div").text(d => getTweetText(d));
+
+    accountInfoDiv
+        .append("div")
+        .attr("class", "official-tweet-info-name")
+        .text(d => d.user.name);
+    accountInfoDiv
+        .append("div")
+        .attr("class", "official-tweet-info-screenname")
+        .text(d => "@" + d.user.screen_name);
+    accountInfoDiv
+        .append("div")
+        .attr("class", "official-tweet-info-time")
+        .text(d => moment(new Date(d.timestamp_ms)).format('LT'));
+    
+    
 
 });
