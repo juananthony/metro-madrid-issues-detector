@@ -26,12 +26,12 @@ body {
 
 .user-tweets {
     display: flex;
-    width: 45%;
+    width: 40%;
     flex-direction: row-reverse;
     flex-wrap: wrap;
     border-right: 1px solid lightgrey;
     margin: 5px 0;
-    padding-right: 6px;
+    padding-right: 16px;
 }
 
 .official-tweets {
@@ -46,9 +46,9 @@ body {
 }
 
 .element {
-    width: 10px;
-    height: 10px;
-    margin: 5px;
+    width: 15px;
+    height: 15px;
+    margin: 2px;
 }
 
 .element-metro-issue {
@@ -63,9 +63,9 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
     margin: 0;
-    padding: 18px 1px;
+    padding: 18px 5px 18px 0;
     border-right: 3px solid #1878A9;
-    width: 55%;
+    width: 56%;
     border-bottom: 1px solid lightgray;
 }
 
@@ -73,7 +73,8 @@ body {
     margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
-    width: 10%;
-    text-align: center;
+    width: 15%;
+    text-align: right;
     align-self: center;
+    padding-right: 2%;
 }
