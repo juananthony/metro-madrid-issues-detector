@@ -1,5 +1,10 @@
 moment.locale('es');
 
+function onDataReceived() {
+    d3.select("#spinner").remove();
+    d3.select(".info").attr("class", "box info");
+}
+
 function getTweetText(tweet) {
     if(tweet.extended_tweet === undefined) return tweet.text;
     else return tweet.extended_tweet.full_text;
@@ -11,17 +16,19 @@ function getClassByClass(tweet) {
 }
 
 function showTweet(tweet) {
+    var coords = d3.mouse(this);
+    console.log(coords);
     console.log(tweet);
 }
 
 d3.json("/tweets/userTweets").then(data => {
 
-    d3.select("#spinner").remove();
+    onDataReceived();
     
     var container = d3
         .select("body")
         .append("div")
-        .attr("class", "element-container");
+        .attr("class", "element-container box");
 
     var nestedData = d3.nest()
         .key(d => moment(new Date(d.timestamp_ms)).format('LL'))
