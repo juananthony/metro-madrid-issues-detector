@@ -13,6 +13,22 @@ body {
     background-color: white;
 }
 
+@media screen and (max-width: 992px) {
+    .element-container {
+        margin: 0 5%;
+        padding: 0 3%;
+        background-color: white;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .element-container {
+        margin: 0 1%;
+        padding: 0 1%;
+        background-color: white;
+    }
+}
+
 .element-date {
     display: flex;
     flex-flow: column;
@@ -37,12 +53,13 @@ body {
 .official-tweets {
     width: 45%;
     flex-wrap: wrap;
-    border-left: 3px solid #1878A9;
+    border-left: 12px solid #1878A9;
 }
 
 .element-hour {
     display: flex;
     flex-flow: row;
+    padding-bottom: 1px;
 }
 
 .element {
@@ -63,8 +80,8 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
     margin: 0;
-    padding: 18px 5px 18px 0;
-    border-right: 3px solid #1878A9;
+    padding: 18px 1px 18px 0;
+    border-right: 3px dashed #1878A9;
     width: 56%;
     border-bottom: 1px solid lightgray;
 }
