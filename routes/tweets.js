@@ -26,7 +26,7 @@ tweetsRouter.route('/')
             {
                 'created_at': 1,
                 'text': 1,
-                'extended_tweet':1,
+                'extended_tweet.full_text':1,
                 'timestamp_ms':1,
                 'user.id': 1,
                 'user.name': 1,
