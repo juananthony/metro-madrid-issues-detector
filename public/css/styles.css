@@ -66,6 +66,7 @@ body {
     width: 15px;
     height: 15px;
     margin: 2px;
+    cursor:pointer;
 }
 
 .element-metro-issue {
@@ -80,7 +81,7 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
     margin: 0;
-    padding: 18px 1px 18px 0;
+    padding: 18px 1px 10px 0;
     border-right: 3px dashed #1878A9;
     width: 56%;
     border-bottom: 1px solid lightgray;

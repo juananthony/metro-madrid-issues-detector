@@ -67,7 +67,7 @@ d3.json("/tweets/userTweets").then(data => {
         .append("div")
         .attr("class", d => "element " + "element-" + getClassByClass(d));
     
-    elementsDiv.on("mouseover", d => {
+    elementsDiv.on("click", d => {
         showTweet(d);
     });
 
