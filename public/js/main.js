@@ -102,7 +102,7 @@ d3.json("/tweets").then(data => {
     
     var accountInfoDiv = officialContainer
         .append("div")
-        .attr("class", "official-tweet-info");
+        .attr("class", "official-tweet-info only-desktop");
 
     officialContainer.append("div").text(d => getTweetText(d));
 

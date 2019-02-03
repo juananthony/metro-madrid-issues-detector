@@ -251,16 +251,42 @@ header > h1 {
     border: 0.01em solid lightgray;
     padding: 1em 0.4em 1em 0.8em;
 }
-
 .official-tweet-container {
     padding-left: 1em;
     font-size: 14px;
 }
-
 .official-tweet-img {
     width: 2em;
     height: 2em;
 }
+@media screen and (max-width: 992px) {
+    .official-tweet {
+        flex-flow: column;
+        align-items: center;
+    }
+    .official-tweet-container {
+        font-size: 2em;
+    }
+    .official-tweet-img {
+        width: 6em;
+        height: 6em;
+    }
+}
+@media screen and (max-width: 600px) {
+    .official-tweet {
+        flex-flow: column;
+        align-items: center;
+        font-size: 2em;
+    }
+    .official-tweet-container {
+        font-size: 2em;
+    }
+    .official-tweet-img {
+        width: 6em;
+        height: 6em;
+    }
+}
+
 
 .official-tweet-account-name {
     display: flex;
