@@ -1,3 +1,10 @@
+:root {
+    --main-issue-color: #DC3545;
+    --main-complaint-color: #E2DD4D;
+    --main-third-color: rgba(24, 120, 169,0.7);
+    --font-sans-serif: Arial,"Helvetica Neue",Helvetica,sans-serif
+}
+
 body {
     background-color: #F3F3F3;
     margin: 0;
@@ -10,6 +17,11 @@ header {
     padding: 40px 15% 30px 15%;
 }
 
+header > h1 {
+    font-family: var(--font-sans-serif);
+    font-weight: 400;
+}
+
 .box {
     margin: 1em 15% 1em 15%;
     padding: 2em 5%;
@@ -17,9 +29,15 @@ header {
 }
 
 @media screen and (max-width: 992px) {
+    header {
+        padding: 1em 1em 1em 3em;
+    }
+    header > h1 {
+        font-size: 3em;
+    }
     .box {
         margin: 1em 5% 1em 5%;
-        padding: 2em 3%;
+        padding: 2em 1%;
         background-color: white;
     }
 }
@@ -32,10 +50,6 @@ header {
     }
 }
 
-header > h1 {
-    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-    font-weight: 400;
-}
 
 .info {
     display: flex;
@@ -49,14 +63,14 @@ header > h1 {
     display: flex;
     align-items: center;
     margin-right: 1em;
-    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-family: var(--font-sans-serif);
     font-size: 18px;
 }
 
 .info-content {
     display: flex;
     flex-flow: column;
-    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-family: var(--font-sans-serif);
 }
 
 .info-content > div {
@@ -67,6 +81,28 @@ header > h1 {
 
 .info-content-paragraph {
     margin-left: 0.4em;
+}
+
+@media screen and (max-width: 992px) {
+    .info-title {
+        font-size: 2.6em;
+        padding-left: 1em;
+    }
+    .info-content-paragraph {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .info-title {
+        font-size: 2.6em;
+        padding-left: 1em;
+    }
+    .info-content-paragraph {
+        margin: 1em 2% 1em 2%;
+        padding: 2em 1%;
+        background-color: white;
+    }
 }
 
 #spinner {
@@ -80,14 +116,14 @@ header > h1 {
 .element-date {
     display: flex;
     flex-flow: column;
-    padding: 0 10%;
+    padding: 0 5%;
 }
 
 @media screen and (max-width: 992px) {
     .element-date {
         display: flex;
         flex-flow: column;
-        padding: 0 7%;
+        padding: 0 2%;
     }
 }
 
@@ -95,7 +131,7 @@ header > h1 {
     .element-date {
         display: flex;
         flex-flow: column;
-        padding: 0 5%;
+        padding: 0 1%;
     }
 }
 
@@ -113,13 +149,14 @@ header > h1 {
     border-right: 1px solid lightgrey;
     margin: 5px 0;
     padding-right: 16px;
+    align-items: center;
 }
 
 .official-tweets {
     width: 45%;
     flex-wrap: wrap;
     border-left: 0.5em solid;
-    border-left-color: rgba(24, 120, 169,0.7);
+    border-left-color: var(--main-third-color);
 }
 
 .element-hour {
@@ -152,20 +189,20 @@ header > h1 {
 }
 
 .element-metro-issue {
-    background-color: #DC3545;
+    background-color: var(--main-issue-color);
 }
 
 .element-metro-complaint {
-    background-color: #E2DD4D
+    background-color: var(--main-complaint-color);
 }
 
 .element-date-title {
-    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-family: var(--font-sans-serif);
     font-weight: 400;
     margin: 0;
     padding: 18px 3px 10px 0;
     border-right: 3px dashed;
-    border-right-color: rgba(24, 120, 169,0.7);
+    border-right-color: var(--main-third-color);
     width: 56%;
     font-size: 18px;
     text-align: right;
@@ -181,7 +218,7 @@ header > h1 {
 
 .element-hour-title {
     margin: 0;
-    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-family: var(--font-sans-serif);
     font-weight: 400;
     font-size: 14px;
     width: 15%;
@@ -206,4 +243,49 @@ header > h1 {
     .element-hour-title {
         font-size: 2em;
     }
+}
+
+.official-tweet {
+    display: flex;
+    margin: 0.4em 0 0.5em 1.3em;
+    border: 0.01em solid lightgray;
+    padding: 1em 0.4em 1em 0.8em;
+}
+
+.official-tweet-container {
+    padding-left: 1em;
+    font-size: 14px;
+}
+
+.official-tweet-img {
+    width: 2em;
+    height: 2em;
+}
+
+.official-tweet-account-name {
+    display: flex;
+    flex-flow: row;
+    margin-bottom: 0.2em;
+}
+
+.official-tweet-info {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-sans-serif);
+    padding-bottom: 0.3em;
+}
+
+.official-tweet-info-name{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.official-tweet-info-screenname {
+    font-size: 12px;
+}
+
+.official-tweet-info-time {
+    font-size: 12px;
 }
