@@ -251,6 +251,7 @@ header > h1 {
     margin: 0.4em 0 0.5em 1.3em;
     border: 0.01em solid lightgray;
     padding: 1em 0.4em 1em 0.8em;
+    font-family: var(--font-sans-serif);
 }
 .official-tweet-container {
     padding-left: 1em;
