@@ -92,6 +92,8 @@ d3.json("/tweets").then(data => {
         .key(d => moment(new Date(d.timestamp_ms)).format('HH'))
         .entries(data);
 
+    container.append("div").attr("class","element-now").text("Ahora");
+
     var datesDiv = container
         .selectAll("div.element-date")
         .data(nestedData)

@@ -114,6 +114,22 @@ header > h1 {
 .element-container {
 }
 
+.element-now {
+    width: 4em;
+    height: 4em;
+    background-color: var(--main-third-color);
+    border-radius: 2em;
+    margin: auto;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-sans-serif);
+    color: white;
+}
+
 .element-date {
     display: flex;
     flex-flow: column;
@@ -121,6 +137,9 @@ header > h1 {
 }
 
 @media screen and (max-width: 992px) {
+    .element-now {
+        font-size: 2em;
+    }
     .element-date {
         display: flex;
         flex-flow: column;
@@ -129,6 +148,9 @@ header > h1 {
 }
 
 @media screen and (max-width: 600px) {
+    .element-now {
+        font-size: 2em;
+    }
     .element-date {
         display: flex;
         flex-flow: column;
@@ -197,6 +219,14 @@ header > h1 {
     background-color: var(--main-complaint-color);
 }
 
+.element-metro-issue:hover {
+    background-color: #ee153e8c;
+}
+
+.element-metro-complaint:hover {
+    background-color: #e2de1887;
+}
+
 .element-date-title {
     font-family: var(--font-sans-serif);
     font-weight: 400;
@@ -206,14 +236,14 @@ header > h1 {
     border-right-color: var(--main-third-color);
     width: 49.5%;
     font-size: 18px;
-    text-align: right;
+    text-align: center;
 }
 
 .element-date-title {
     border-top: 1px solid lightgray;
 }
 
-.element-date:first-child > .element-date-title {
+.element-container > .element-date:nth-child(2)> .element-date-title {
     border-top: 0px;
 }
 
@@ -230,10 +260,10 @@ header > h1 {
 
 @media screen and (max-width: 992px) {
     .element-date-title {
-        font-size: 2em;
+        font-size: 1.7em;
     }
     .element-hour-title {
-        font-size: 2em;
+        font-size: 1.7em;
     }
 }
 
