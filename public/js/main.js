@@ -121,7 +121,7 @@ d3.json("/tweets").then(data => {
     
     hoursDiv
         .append("h3")
-        .text(d => d.key)
+        .text(d => d.key + ":00")
         .attr("class", "element-hour-title");
     
     var elementsDiv = userTweetsDiv.selectAll("div.element")
