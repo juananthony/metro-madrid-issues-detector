@@ -24,7 +24,6 @@ tweetsRouter.route('/')
                 ],
             },
             {
-                'created_at': 1,
                 'text': 1,
                 'extended_tweet.full_text':1,
                 'timestamp_ms':1,
@@ -32,9 +31,8 @@ tweetsRouter.route('/')
                 'user.name': 1,
                 'user.screen_name': 1,
                 'user.profile_image_url_https': 1,
-                'id': 1,
                 'id_str': 1,
-                'classification': 1
+                'classification.naive_bayes.result': 1
             },
             {
                 sort: {'timestamp_ms': -1}
