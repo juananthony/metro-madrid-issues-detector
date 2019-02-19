@@ -16,10 +16,10 @@ header {
     background-color: #383838;
     color: white;
     padding: 40px 15% 30px 15%;
+    font-family: var(--font-sans-serif);
 }
 
 header > h1 {
-    font-family: var(--font-sans-serif);
     font-weight: 400;
 }
 
