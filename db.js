@@ -8,7 +8,7 @@ const mongodb_host = config.db.uri;
 console.log("host: " + mongodb_host);
 
 mongoose.set("debug", true);
-mongoose.connect(mongodb_host, {dbName: 'metrotwitterdb'});
+mongoose.connect(mongodb_host, {dbName: 'metrotwitterdb', useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
