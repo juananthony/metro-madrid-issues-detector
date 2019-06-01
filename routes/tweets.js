@@ -36,7 +36,7 @@ tweetsRouter.route('/')
             },
             {
                 sort: {'timestamp_ms': -1}
-            });
+            }).limit(50);
         query.exec((err, tweets) => {
             console.log("received ... " + tweets.length)
             if(tweets !== undefined) {
