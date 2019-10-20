@@ -1,1 +1,1 @@
-userworker: npm start
+userworker: sudo npm start
