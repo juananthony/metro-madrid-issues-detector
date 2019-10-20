@@ -36,7 +36,7 @@ tweetsRouter.route('/')
                 'classification.naive_bayes.result': 1
             },
             {
-                sort: {'_id': -1}
+                sort: {'timestamp_ms': -1}
             });
         query.exec((err, tweets) => {
             console.log("received ... " + tweets.length)
@@ -69,8 +69,7 @@ tweetsRouter.route("/:timestamp/:page/:days").get((request, response) => {
                         {'user.id': 182764833},
                         {'text': {$regex: '^Circulac(.*)|^Servicio(.*)|^Incidencia(.*)|^Continúa interr(.*)|^Servicio norm(.*)|^El tramo interr(.*)|^Los trenes no efect(.*)|^Interrumpida la cir(.*)|^Continúa interrum(.*)|^Servicio restablecido(.*)'}}
                     ]}
-                ],
-                {'timestamp_ms' }
+                ]
             },
             {
                 'text': 1,
@@ -94,6 +93,6 @@ tweetsRouter.route("/:timestamp/:page/:days").get((request, response) => {
                 response.json('{error: "no tweets"}');
             }
         })
-    })
+    });
 
 module.exports = tweetsRouter;
