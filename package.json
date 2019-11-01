@@ -29,7 +29,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "moment": "^2.24.0",
-    "mongoose": "^5.3.13",
+    "mongoose": "^5.7.5",
     "node-uuid": "^1.4.8"
   }
 }
