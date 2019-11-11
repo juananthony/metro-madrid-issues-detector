@@ -85,7 +85,9 @@ tweetsRouter.route("/:timestamp/:page/:days").get((request, response) => {
             {
                 sort: {'_id': -1}
             });
-        query.exec((err, tweets) => {
+        query
+            .limit(2000)
+            .exec((err, tweets) => {
             console.log("received ... " + tweets.length)
             if(tweets !== undefined) {
                 response.json(tweets);
