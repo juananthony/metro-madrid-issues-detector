@@ -67,7 +67,7 @@ tweetsRouter.route("/:timestamp/:page/:days").get((request, response) => {
                     ]},
                     {'$and': [
                         {'user.id': 182764833},
-                        {'text': {$regex: '^Circulac(.*)|^Servicio(.*)|^Incidencia(.*)|^Continúa interr(.*)|^Servicio norm(.*)|^El tramo interr(.*)|^Los trenes no efect(.*)|^Interrumpida la cir(.*)|^Continúa interrum(.*)|^Servicio restablecido(.*)'}}
+                        {'text': {$regex: 'Circulac(.*)|Servicio(.*)|Incidencia(.*)|Continúa interr(.*)|Servicio norm(.*)|El tramo interr(.*)|Los trenes no efect(.*)|Interrumpida la cir(.*)|Continúa interrum(.*)|Servicio restablecido(.*)'}}
                     ]}
                 ]
             },
