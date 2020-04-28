@@ -24,6 +24,10 @@ header {
     font-size: 0.8em;
 }
 
+.about-me > a {
+    color: #ccc;
+}
+
 header > h1 {
     font-weight: 400;
 }
