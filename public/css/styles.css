@@ -198,10 +198,11 @@ header > h1 {
 }
 
 .element {
-    width: 1em;
-    height: 1em;
-    margin: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0.1em;
     cursor:pointer;
+    border-radius: 50em;
 }
 
 @media screen and (max-width: 992px) {
