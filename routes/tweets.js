@@ -37,7 +37,7 @@ tweetsRouter.route('/')
             },
             {
                 sort: {'timestamp_ms': -1}
-            }).limit(2000);
+            }).limit(500);
         query.exec((err, tweets) => {
             console.log("received ... " + tweets.length)
             if(tweets !== undefined) {
@@ -86,7 +86,7 @@ tweetsRouter.route("/:timestamp/:page/:days").get((request, response) => {
                 sort: {'_id': -1}
             });
         query
-            .limit(2000)
+            .limit(500)
             .exec((err, tweets) => {
             console.log("received ... " + tweets.length)
             if(tweets !== undefined) {
