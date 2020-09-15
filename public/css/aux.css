@@ -16,3 +16,66 @@
         display:none;
     }
 }
+
+
+/*Init*/
+.accordeon-checkbox {
+    display: none;
+}
+.accordeon-title-label {
+    cursor: pointer;
+    background: #c4c4c4;
+    display: block;
+}
+.accordeon-content {
+    height: 0;
+    overflow:hidden;
+    background-color: gold;
+}
+/*Click functionaliteit*/
+.accordeon:checked + label {
+    background: #e4e4e4;
+}
+.accordeon-checkbox:checked ~ .accordeon-content {
+    -webkit-animation: slide-up 1s ease forwards;
+    /* Safari 4+ */
+    -moz-animation: slide-up 1s ease forwards;
+    /* Fx 5+ */
+    -o-animation: slide-up 1s ease forwards;
+    /* Opera 12+ */
+    animation: slide-up 1s ease forwards;
+    /* IE 10+ */
+}
+/*Animation functionality*/
+@-webkit-keyframes slide-up {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 300px;
+    }
+}
+@-moz-keyframes slide-up {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 300px;
+    }
+}
+@-o-keyframes slide-up {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 300px;
+    }
+}
+@keyframes slide-up {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 300px;
+    }
+}

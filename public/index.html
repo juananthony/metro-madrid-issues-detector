@@ -8,19 +8,28 @@
 
         gtag('config', 'UA-164648672-2');
         </script>
-        <title>Incidencias Metro de Madrid</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="./css/styles.css">
-        <link rel="stylesheet" type="text/css" href="./css/spinner.css">
-        <link rel="stylesheet" type="text/css" href="./css/aux.css">
+        <title>NLP: Metro de Madrid y Twitter</title>
+        <meta charset="utf-8"/>
+        <meta name="description" content="Esta herramienta analiza en tiempo real todos los tweets de los usuarios que están mencionando a la cuenta oficial de Metro de Madrid (@metro_madrid). Para analizarlos, se utiliza técnicas de NLP (Procesamiento de lenguaje natural) y Machine Learning para clasificar automáticamente cada uno de los tweets."/>
+        <meta name="keywords" content="nlp,nltk,metro_madrid, metro de madrid, twitter, machine learning, procesado de lenguaje natural, natural language processing, social networks"/>
+        <meta name="robots" content="index"/>
+        <link rel="stylesheet" type="text/css" href="./css/styles.min.css">
+        <link rel="stylesheet" type="text/css" href="./css/spinner.min.css">
+        <link rel="stylesheet" type="text/css" href="./css/aux.min.css">
     </head>
     <body>
         <header>
             <div class="about-me">Creado por: <a href="http://juananton.io">Juan Antonio Jiménez López</a></div>
-            <h1>Incidencias del Metro de Madrid</h1>
-            <p>¿Sobre que se están quejando los usuarios?</p>
-            <p>Esta herramienta pretende proporcionar a todos los usuarios de Metro de Madrid la posibilidad de conocer sobre qué se están quejando el resto de usuarios.</p>
+            <h1>Metro de Madrid y Twitter</h1>
+            <h2>¿Que quejas (o posibles incidencias) se están detectando en tiempo real a través de esta red social?</h2>
         </header>
+        <div class="accordion">
+            <div class="accordion-content">
+                <p>Esta herramienta analiza en tiempo real todos los tweets de los usuarios que están mencionando a la cuenta oficial de Metro de Madrid (@metro_madrid). Para analizarlos, se utiliza técnicas de NLP (Procesamiento de lenguaje natural) y Machine Learning para clasificar automáticamente cada uno de los tweets.</p>
+                <p>La información se muestra en una linea temporal donde, en el lado izquierdo, se muestran los tweets codificados en dos colores según la clasificación mediante NLP (amarillo=queja y rojo=incidencia). En el lado derecho, se muestran los tweets de la cuenta de Metro de Madrid con alguna información acerca de la circulación y el funcionamiento del servicio.</p>
+            </div>
+            <button class="accordion-more">Mostrar más</button>
+        </div>
         <div class="hide box info">
             <div class="info-title">
                 Leyenda

@@ -1,3 +1,14 @@
+document.getElementsByClassName("accordion-more")[0].addEventListener("click", function() {
+    var content = document.getElementsByClassName("accordion-content")[0];
+    if(content.style.display != "block") {
+        document.getElementsByClassName("accordion-more")[0].innerText = "Mostrar menos";
+        content.style.display = "block";
+    } else {
+        document.getElementsByClassName("accordion-more")[0].innerText = "Mostrar más";
+        content.style.display = null;
+    }
+})
+
 var METRO_MADRID_ACCOUNT_ID = 182764833,
     TWITTER_URL = "https://twitter.com/";
 
