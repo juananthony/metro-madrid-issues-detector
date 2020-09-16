@@ -13,7 +13,7 @@ body {
 
 header {
     margin: 0;
-    background-color: #383838;
+    background-color: #383838f0;
     color: white;
     padding: 4em 15% 0 15%;
     font-family: var(--font-sans-serif);
@@ -42,7 +42,7 @@ header > h2 {
 .accordion {
     display: flex;
     flex-direction: column;
-    background-color: #383838;
+    background-color: #383838f0;
     padding: 1em 0 3.5em 0;
     margin: 0;
     color: white;
