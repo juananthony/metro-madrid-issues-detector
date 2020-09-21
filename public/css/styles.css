@@ -457,9 +457,35 @@ header > h2 {
 
 .user-tweet-example-close {
     cursor: pointer;
-    margin-left: 0.7em;
+    position: absolute;
+    right: 0.2em;
+    top: 0.5em;
+    width: 2em;
+    height: 2em;
+    opacity: 0.3;
 }
 
+.user-tweet-example-close:hover {
+    opacity: 1;
+}
+
+.user-tweet-example-close:before, .user-tweet-example-close:after {
+    position: absolute;
+    left: 1em;
+    content: ' ';
+    height: 1.5em;
+    width: 2px;
+    background-color: #333;
+}
+
+.user-tweet-example-close:before {
+    transform: rotate(45deg);
+}
+
+.user-tweet-example-close:after {
+    transform: rotate(-45deg);
+}
+  
 .user-tweet-example-content {
     margin-left: 0.5em;
     font-size: 14px;
@@ -472,6 +498,7 @@ header > h2 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.4em;
+    flex-direction: column;
 }
 
 .user-tweet-example-screenname {

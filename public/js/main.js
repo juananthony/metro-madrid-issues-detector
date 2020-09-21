@@ -35,7 +35,6 @@ function showTweet(tweet) {
     tweetBox.setAttribute("class", "user-tweet-example");
 
     var closeButton = document.createElement("DIV");
-    closeButton.appendChild(document.createTextNode("X"));
     closeButton.setAttribute("class", "user-tweet-example-close");
     closeButton.addEventListener("click", event => onCloseExampleTweet(closeButton, event));
 
