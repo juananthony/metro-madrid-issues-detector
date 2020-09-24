@@ -10,7 +10,7 @@
 {
   0%
   {
-    transform: scale( .9 );
+    transform: scale( .85 );
     z-index: 0;
   }
   20%
@@ -20,7 +20,7 @@
   }
   40%
   {
-    transform: scale( .9 );
+    transform: scale( .85 );
     z-index: 0;
   }
   60%
@@ -30,12 +30,12 @@
   }
   80%
   {
-    transform: scale( .9 );
+    transform: scale( .85 );
     z-index: 0;
   }
   100%
   {
-    transform: scale( .9 );
+    transform: scale( .85 );
     z-index: 0;
   }
 }
@@ -263,6 +263,8 @@ header > h2 {
     margin: 5px 0;
     padding-right: 0.5%;
     align-items: center;
+    place-content: center;
+    justify-content: end;
 }
 
 .official-tweets {
@@ -275,7 +277,7 @@ header > h2 {
 .element-hour {
     display: flex;
     flex-flow: row;
-    padding-bottom: 1px;
+    padding-bottom: 0.15em;
 }
 
 .element {
@@ -447,7 +449,7 @@ header > h2 {
     width: 20em;
     position: absolute;
     background-color: white;
-    border: 1px solid #ccc;
+    border: 0.15em solid #ccc;
     display: flex;
     font-family: var(--font-sans-serif);
     padding: 1em;
