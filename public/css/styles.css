@@ -296,17 +296,17 @@ header > h2 {
 
 @media screen and (max-width: 992px) {
     .element {
-        width: 3em;
-        height: 3em;
-        margin: 0.2em;
+        width: 5em;
+        height: 5em;
+        margin: 0.1em;
     }
 }
 
 @media screen and (max-width: 600px) {
     .element {
-        width: 3em;
-        height: 3em;
-        margin: 0.2em;
+        width: 5em;
+        height: 5em;
+        margin: 0.1em;
     }
 }
 
