@@ -142,7 +142,9 @@ d3.json("/tweets").then(data => {
         .filter(d => d.user.id != METRO_MADRID_ACCOUNT_ID)
         .append("div")
         .attr("id", d => d.id_str)
-        .attr("class", d => "element " + "element-" + getClassByClass(d));
+        .attr("class", d => "element " + "element-" + getClassByClass(d))
+        .append("img")
+        .attr("src", d => d.user.profile_image_url_https);
 
     elementsDiv.on("click", d => {
         showTweet(d, elementsDiv);

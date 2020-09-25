@@ -281,12 +281,17 @@ header > h2 {
 }
 
 .element {
-    width: 1.2em;
-    height: 1.2em;
+    width: 1.5em;
+    height: 1.5em;
     margin: 0.1em;
     cursor:pointer;
     border-radius: 50em;
     animation: heartbeat 2s infinite;
+}
+
+.element > img {
+    width: 100%;
+    border-radius: 10em;
 }
 
 @media screen and (max-width: 992px) {
@@ -307,10 +312,12 @@ header > h2 {
 
 .element-metro-issue {
     background-color: var(--main-issue-color);
+    border: 0.2em solid var(--main-issue-color);
 }
 
 .element-metro-complaint {
     background-color: var(--main-complaint-color);
+    border: 0.2em solid var(--main-complaint-color);
 }
 
 .element-metro-issue:hover {
