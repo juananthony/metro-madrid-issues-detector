@@ -127,7 +127,7 @@ header > h2 {
         font-size: 3em;
     }
     .box {
-        margin: 1em 5% 1em 5%;
+        margin: 1em 1em 1em 1em;
         padding: 2em 0.5%;
         background-color: white;
     }
@@ -296,16 +296,16 @@ header > h2 {
 
 @media screen and (max-width: 992px) {
     .element {
-        width: 6em;
-        height: 6em;
+        width: 5em;
+        height: 5em;
         margin: 0em;
     }
 }
 
 @media screen and (max-width: 600px) {
     .element {
-        width: 6em;
-        height: 6em;
+        width: 5em;
+        height: 5em;
         margin: 0em;
     }
 }
