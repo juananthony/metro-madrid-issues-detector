@@ -150,6 +150,9 @@ d3.json("/tweets").then(data => {
         showTweet(d, elementsDiv);
     });
 
+    // Show a tweet displayed by default
+    showTweet(elementsDiv[3], elementsDiv);
+
     // Add official tweets
     var officialsDiv = hoursDiv.append("div").attr("class", "official-tweets");
 
