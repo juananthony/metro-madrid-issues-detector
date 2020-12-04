@@ -30,7 +30,7 @@ function getClassByClass(tweet) {
 }
 
 function showTweet(tweet) {
-    d3.event.preventDefault();
+    if(d3.event) d3.event.preventDefault();
     var tweetBox = document.createElement("DIV");
     tweetBox.setAttribute("class", "user-tweet-example");
 
@@ -151,7 +151,7 @@ d3.json("/tweets").then(data => {
     });
 
     // Show a tweet displayed by default
-    showTweet(elementsDiv[3], elementsDiv);
+    showTweet(elementsDiv[3]);
 
     // Add official tweets
     var officialsDiv = hoursDiv.append("div").attr("class", "official-tweets");
