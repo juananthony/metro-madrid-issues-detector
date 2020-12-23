@@ -29,6 +29,16 @@ function getClassByClass(tweet) {
     else if(tweet.classification.naive_bayes.result === 'complaint') return 'metro-complaint';
 }
 
+function eventFire(el, etype){
+    if (el.fireEvent) {
+      el.fireEvent('on' + etype);
+    } else {
+      var evObj = document.createEvent('Events');
+      evObj.initEvent(etype, true, false);
+      el.dispatchEvent(evObj);
+    }
+  }
+
 function showTweet(tweet) {
     if(d3.event) d3.event.preventDefault();
     var tweetBox = document.createElement("DIV");
@@ -193,4 +203,5 @@ d3.json("/tweets").then(data => {
         .text(d => moment(new Date(d.timestamp_ms)).format('LT'));
     
 
+    eventFire(document.getElementsByClassName("element-metro-issue")[3].firstElementChild, "click")
 });
